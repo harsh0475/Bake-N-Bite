@@ -1,7 +1,5 @@
 from __future__ import annotations
 
-import razorpay
-
 from sqlalchemy.exc import SQLAlchemyError
 from sqlalchemy.orm import Session
 
@@ -427,6 +425,8 @@ class PaymentService(BaseService):
         db: Session,
         order_id: int,
     ) -> dict:
+        
+        import razorpay
 
         payment = self.get_order_payment(
             db,
@@ -516,6 +516,8 @@ class PaymentService(BaseService):
         db: Session,
         data: RazorpayVerification,
     ) -> PaymentResponse:
+        
+        import razorpay
 
         payment = payment_repository.get_by_gateway_order_id(
             db,
