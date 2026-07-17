@@ -1,0 +1,332 @@
+@import "tailwindcss";
+
+/* ==========================================================
+   Bake N Bite Design System
+========================================================== */
+
+:root {
+  --primary: #f97316;
+  --primary-dark: #ea580c;
+  --primary-light: #fff7ed;
+
+  --secondary: #16a34a;
+  --secondary-light: #dcfce7;
+
+  --background: #fffaf5;
+  --surface: #ffffff;
+
+  --border: #fde7d6;
+
+  --text: #1f2937;
+  --text-light: #6b7280;
+
+  --shadow-sm:
+    0 2px 10px rgba(15, 23, 42, 0.05);
+
+  --shadow-md:
+    0 8px 30px rgba(15, 23, 42, 0.08);
+
+  --shadow-lg:
+    0 15px 45px rgba(15, 23, 42, 0.12);
+
+  --radius-sm: 12px;
+  --radius-md: 18px;
+  --radius-lg: 26px;
+
+  --transition: 0.25s ease;
+}
+
+/* ==========================================================
+   Reset
+========================================================== */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+
+  margin: 0;
+
+  min-width: 320px;
+
+  min-height: 100vh;
+
+  font-family:
+    Inter,
+    system-ui,
+    sans-serif;
+
+  background:
+    linear-gradient(
+      to bottom,
+      #fffaf5,
+      #fffefc
+    );
+
+  color: var(--text);
+
+  text-rendering: optimizeLegibility;
+
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ==========================================================
+   Typography
+========================================================== */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  line-height: 1.2;
+  color: var(--text);
+}
+
+p {
+  line-height: 1.7;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+/* ==========================================================
+   Images
+========================================================== */
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+/* ==========================================================
+   Buttons
+========================================================== */
+
+button {
+  cursor: pointer;
+  transition: all var(--transition);
+}
+
+/* ==========================================================
+   Inputs
+========================================================== */
+
+input,
+textarea,
+select {
+
+  transition: all 0.25s ease;
+
+  border-radius: 14px;
+
+  outline: none;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+
+  border-color: var(--primary);
+
+  box-shadow:
+    0 0 0 4px
+    rgba(249,115,22,.12);
+}
+
+/* ==========================================================
+   Selection
+========================================================== */
+
+::selection {
+
+  background: #fdba74;
+
+  color: white;
+
+}
+
+/* ==========================================================
+   Scrollbar
+========================================================== */
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #fff2e8;
+}
+
+::-webkit-scrollbar-thumb {
+
+  background: linear-gradient(
+    to bottom,
+    #fb923c,
+    #f97316
+  );
+
+  border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #ea580c;
+}
+
+/* ==========================================================
+   Utilities
+========================================================== */
+
+.container-page {
+
+  max-width: 1280px;
+
+  margin-inline: auto;
+
+  padding-inline: 20px;
+}
+
+.card {
+
+  background: white;
+
+  border-radius: 24px;
+
+  box-shadow: var(--shadow-sm);
+
+  transition: all .25s ease;
+}
+
+.card:hover {
+
+  transform: translateY(-3px);
+
+  box-shadow: var(--shadow-md);
+
+}
+
+.section {
+
+  padding-block: 80px;
+}
+
+.section-title {
+
+  font-size: clamp(
+    2rem,
+    3vw,
+    3rem
+  );
+
+  font-weight: 800;
+}
+
+.section-subtitle {
+
+  color: var(--text-light);
+
+  margin-top: 14px;
+}
+
+/* ==========================================================
+   Animation
+========================================================== */
+
+.fade-in {
+
+  animation:
+    fadeIn .5s ease;
+}
+
+@keyframes fadeIn {
+
+  from {
+
+    opacity: 0;
+
+    transform:
+      translateY(20px);
+
+  }
+
+  to {
+
+    opacity: 1;
+
+    transform:
+      translateY(0);
+
+  }
+
+}
+
+.scale-hover {
+
+  transition: .25s;
+}
+
+.scale-hover:hover {
+
+  transform:
+    scale(1.03);
+
+}
+
+/* ==========================================================
+   Mobile
+========================================================== */
+
+@media (max-width:768px) {
+
+  .section {
+
+    padding-block: 56px;
+
+  }
+
+  .container-page {
+
+    padding-inline: 16px;
+
+  }
+
+}
+
+/* ===================================================== */
+/* Hide Scrollbar */
+/* ===================================================== */
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbar-hide {
+  scrollbar-width: none;
+}
+
+
+/* .debug-text {
+  color: red !important;
+  background: yellow !important;
+  font-size: 32px !important;
+  font-weight: bold !important;
+} */
